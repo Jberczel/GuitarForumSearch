@@ -46,3 +46,7 @@ gem 'activerecord-reset-pk-sequence'
 
 gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
 
+group :production do
+  gem 'rails_12factor'
+end
+
