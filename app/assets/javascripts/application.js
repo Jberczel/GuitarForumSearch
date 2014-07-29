@@ -11,16 +11,18 @@
 // about supported directives.
 //
 //= require jquery
+//= require pace/pace
 //= require bootstrap-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require dataTables/jquery.dataTables
 //= require dataTables/bootstrap/3/jquery.dataTables.bootstrap
+
 //= require_tree .
 
 $(document).ready(function() {
     $('#guitar').dataTable( {
 
       "ordering": false
-    } ).show();
+    } ).fadeIn("slow");
 } );
