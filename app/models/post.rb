@@ -29,7 +29,7 @@ class Post < ActiveRecord::Base
     end
   end
 
-
+  # used with previous search form; replace with dataTables plugin
   def self.search(search)
     if search
       where("title ILIKE ?", "%#{search}%")
