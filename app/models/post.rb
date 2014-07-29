@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   def self.scrape_create
     require 'open-uri'
     url = "http://www.acousticguitarforum.com/forums/forumdisplay.php"
-    url << "?f=17&pp=200&sort=lastpost&order=desc&daysprune=100"
+    url << "?f=17&pp=200&sort=lastpost&order=desc&daysprune=365"
     
     begin
       data = Nokogiri::HTML(open(url))
@@ -27,7 +27,7 @@ class Post < ActiveRecord::Base
         page_url = url + "&page=#{i}"
         data = Nokogiri::HTML(open(page_url))
         rows = data.css('#threadbits_forum_17 tr')
-        rows  = rows[7..-1] # exclude sticky topics on first page
+        rows  = rows[7..-1] if i == 1 # exclude sticky topics on first page
         parse_create_records(rows)
       end
     end
