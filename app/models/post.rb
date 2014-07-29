@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   def self.scrape_create
     require 'open-uri'
     url = "http://www.acousticguitarforum.com/forums/forumdisplay.php"
-    url << "?f=17&pp=200&sort=lastpost&order=desc&daysprune=365"
+    url << "?f=17&pp=200&sort=lastpost&order=desc&daysprune=100"
     
     begin
       data = Nokogiri::HTML(open(url))
