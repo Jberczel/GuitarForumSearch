@@ -13,4 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require dataTables/jquery.dataTables
 //= require_tree .
+
+$(document).ready(function() {
+    $('#guitar').dataTable( {
+
+      "ordering": false
+    } ).show();
+} );

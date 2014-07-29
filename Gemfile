@@ -44,3 +44,5 @@ gem 'nokogiri', '~> 1.6.3.1'
 # resets db ids when loading scraped data
 gem 'activerecord-reset-pk-sequence'
 
+gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
+
