@@ -7,15 +7,20 @@ $input-border-focus: $main-color;
 /* customize datatables */
 
 div.dataTables_filter input,
-div.dataTables_filter label,
- {
+div.dataTables_filter label {
   font-size: 1.1em;
   margin-left: 10px;
 }
 
+div.dataTables_length label
+div.dataTables_info  {
+  font-size: 1.1em;
+
+}
+
 .table-bordered > thead > tr > th, 
 .table-bordered > thead > tr > td {
-  background-color:  lighten($main-color, 10%);
+  background-color:  lighten($main-color, 5%);
   background-border: lighten($main-color, 20%);
   color: white;
 }
@@ -34,7 +39,7 @@ table.dataTable tbody td > a {
 .pagination > .active > a, 
 .pagination > .active > a:hover, 
 .pagination > .active > a:focus {
-  background-color:  lighten($main-color, 10%);
+  background-color:  lighten($main-color, 5%);
   background-border: lighten($main-color, 20%);
 }
 
