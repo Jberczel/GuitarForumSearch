@@ -1,2 +1,27 @@
 <h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+
+<%= form_tag root_path, method: "get" do %>
+
+  <%= text_field_tag(:search, params[:search]) %>
+  <%= submit_tag("Search", :name => nil) %>
+<% end %>
+
+<table>
+ 
+<% @posts.each do |p| %>
+  <tr>
+    <td>
+      <a href="http://www.acousticguitarforum.com/forums/<%= p.link %>" target="_blank">
+        <%= p.title %>
+      </a>
+      <br>
+        <%= p.author%>
+    </td>
+    <td><%= p.last_post %></td>
+    <td><%= p.replies %></td>
+    <td><%= p.views %></td>
+
+  </tr>
+ <% end %>
+</tbody>
+</table>
