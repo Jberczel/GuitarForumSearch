@@ -1,0 +1,7 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* display guitar table after dataTables loads */
+#guitar {
+  display: none;
+}
