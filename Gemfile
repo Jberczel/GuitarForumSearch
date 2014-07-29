@@ -38,3 +38,9 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+# scrape AGF Forum posts
+gem 'nokogiri', '~> 1.6.3.1'
+
+# resets db ids when loading scraped data
+gem 'activerecord-reset-pk-sequence'
+
