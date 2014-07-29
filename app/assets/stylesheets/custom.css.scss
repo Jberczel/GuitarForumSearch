@@ -1,7 +1,105 @@
+$main-color: #3E5C92;
+$input-border-focus: $main-color;
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+/* customize datatables */
+
+div.dataTables_filter input,
+div.dataTables_filter label,
+ {
+  font-size: 1.1em;
+  margin-left: 10px;
+}
+
+.table-bordered > thead > tr > th, 
+.table-bordered > thead > tr > td {
+  background-color:  lighten($main-color, 10%);
+  background-border: lighten($main-color, 20%);
+  color: white;
+}
+
+table.dataTable tbody td > a {
+  color: lighten($main-color, 10%);
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+ }
+
+.pagination > li > a, .pagination > li > span {
+  color: $main-color;
+}
+
+.pagination > .active > a, 
+.pagination > .active > a:hover, 
+.pagination > .active > a:focus {
+  background-color:  lighten($main-color, 10%);
+  background-border: lighten($main-color, 20%);
+}
 
 /* display guitar table after dataTables loads */
 #guitar {
   display: none;
 }
+
+
+/* typography */
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}
+
+ 
