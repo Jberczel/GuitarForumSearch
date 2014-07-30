@@ -1,15 +1,38 @@
 $main-color: #3E5C92;
 $input-border-focus: $main-color;
+$input-color: $main-color;
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+@mixin gradient($from, $to) {
+  /* fallback/image non-cover color */
+  background-color: $from;
+ 
+  /* Firefox 3.6+ */
+  background-image: -moz-linear-gradient($from, $to);
+ 
+  /* Safari 4+, Chrome 1+ */
+  background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from), to($to));
+ 
+  /* Safari 5.1+, Chrome 10+ */
+  background-image: -webkit-linear-gradient($from, $to);
+ 
+  /* Opera 11.10+ */
+  background-image: -o-linear-gradient($from, $to);
+}
 
 /* customize datatables */
 
 div.dataTables_filter input,
 div.dataTables_filter label {
-  font-size: 1.1em;
+  font-size: 1.0em;
   margin-left: 10px;
+}
+
+div.dataTables_filter input {
+  font-weight: bold;
 }
 
 div.dataTables_length label
@@ -20,8 +43,7 @@ div.dataTables_info  {
 
 .table-bordered > thead > tr > th, 
 .table-bordered > thead > tr > td {
-  background-color:  lighten($main-color, 5%);
-  background-border: lighten($main-color, 20%);
+  @include gradient($main-color, lighten($main-color, 20%));
   color: white;
 }
 
@@ -41,6 +63,11 @@ table.dataTable tbody td > a {
 .pagination > .active > a:focus {
   background-color:  lighten($main-color, 5%);
   background-border: lighten($main-color, 20%);
+}
+
+.table-striped>tbody>tr:nth-child(odd)>td, 
+.table-striped>tbody>tr:nth-child(odd)>th {
+  background-color: lighten($main-color, 55%);
 }
 
 /* display guitar table after dataTables loads */
