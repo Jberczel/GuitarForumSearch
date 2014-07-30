@@ -1,7 +1,7 @@
 $main-color: #3E5C92;
+$main-light: lighten($main-color, 20%);
 $input-border-focus: $main-color;
 $input-color: $main-color;
-
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -35,15 +35,14 @@ div.dataTables_filter input {
   font-weight: bold;
 }
 
-div.dataTables_length label
-div.dataTables_info  {
-  font-size: 1.1em;
-
+div.dataTables_length label,
+div.dataTables_info {
+  font-size: 1.0em;
 }
 
 .table-bordered > thead > tr > th, 
 .table-bordered > thead > tr > td {
-  @include gradient($main-color, lighten($main-color, 20%));
+  @include gradient($main-color, $main-light);
   color: white;
 }
 
