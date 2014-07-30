@@ -20,7 +20,8 @@
           <br>
             <%= p.author%>
         </td>
-        <td><%= p.last_post %></td>
+        <% date, person = getDateAndPerson(p.last_post) %>
+        <td><%= date %> <br>by <%= person %></td>
         <td><%= p.replies %></td>
         <td><%= p.views %></td>
       </tr>
