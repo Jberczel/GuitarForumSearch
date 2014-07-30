@@ -8,24 +8,24 @@ class Post < ActiveRecord::Base
     
     begin
       data = Nokogiri::HTML(open(url))
+      # get a single guitar listing (skip first 7 sticky topics on forum)
+      listing = data.css('#threadbits_forum_17 tr')[7]
+      parse_create_record(listing)
       # number of fourm pages to scrape
-      count = data.css('td.vbmenu_control').text.split(' ').last.to_i 
-      row = data.css('#threadbits_forum_17 tr')[7]
-      # creates a single record (skip first 7 sticky topics on forum)
-      parse_create_record(row) 
+      numPages = data.css('td.vbmenu_control').text.split(' ').last.to_i    
     rescue StandardError=>e
       puts "Error: #{e}"
       puts "Was not able to parse website and create records."
     else
       destroy_all         # delete old records
-      reset_pk_sequence   # reset id to 0
-      
-      1.upto(count) do |i|
+      reset_pk_sequence   # reset primary key to 0
+
+      1.upto(numPages) do |i|
         page_url = url + "&page=#{i}"
         data = Nokogiri::HTML(open(page_url))
-        rows = data.css('#threadbits_forum_17 tr')
-        rows  = rows[7..-1] if i == 1   # exclude sticky topics on first page
-        parse_create_records(rows)
+        listings = data.css('#threadbits_forum_17 tr')
+        listings  = listings[7..-1] if i == 1   # exclude sticky topics on first page
+        parse_create_records(listings)
       end
     end
   end
@@ -39,7 +39,7 @@ class Post < ActiveRecord::Base
       views     = row.css('td')[5].text
       link      = row.at_css('td a')['href']
 
-      Post.create!( title: title, link: link, author: author, 
+      Post.create!(title: title, link: link, author: author, 
                     last_post: last_post, replies: replies, views: views)
     end
 
