@@ -1,12 +1,5 @@
 <h1>acoustic guitar forum</h1>
 
-
-    <!-- Remove Search form; use dataTables -->
-    <!-- <%= form_tag root_path, method: "get" do %>
-      <%= text_field_tag(:search, params[:search]) %>
-      <%= submit_tag("Search", :name => nil) %>
-    <% end %> -->
-
 <table id="guitar" class="table table-striped table-bordered" cellspacing="0" width="100%">
   <thead>
     <tr>
@@ -16,21 +9,22 @@
       <th>Views</th>
     </tr>
   </thead>
-  <tbody>
-  <% @posts.each do |p| %>
-    <tr>
-      <td>
-        <a href="http://www.acousticguitarforum.com/forums/<%= p.link %>" target="_blank">
-          <%= p.title %>
-        </a>
-        <br>
-          <%= p.author%>
-      </td>
-      <td><%= p.last_post %></td>
-      <td><%= p.replies %></td>
-      <td><%= p.views %></td>
-    </tr>
-  <% end %>
-  </tbody>
 
+  <tbody>
+    <% @posts.each do |p| %>
+      <tr>
+        <td>
+          <a href="http://www.acousticguitarforum.com/forums/<%= p.link %>" target="_blank">
+            <%= p.title %>
+          </a>
+          <br>
+            <%= p.author%>
+        </td>
+        <td><%= p.last_post %></td>
+        <td><%= p.replies %></td>
+        <td><%= p.views %></td>
+      </tr>
+    <% end %>
+  </tbody>
+  
 </table>
