@@ -1,0 +1,36 @@
+$main-color: #3E5C92;
+$main-light: lighten($main-color, 20%);
+$input-border-focus: $main-color;
+$input-color: $main-color;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FFF;
+  font-size: 14px;
+  font-family: $verdana;
+}
+
+header {
+  color: #FFF;
+  padding: 20px;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  @include linear-gradient(#777, #444);
+  @include box-shadow(0 0 6px 3px #000);
+}
+
+.container {
+  @include outer-container;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+
+
+

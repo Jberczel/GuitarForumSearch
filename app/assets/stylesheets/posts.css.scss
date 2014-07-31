@@ -1,3 +1,39 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* display guitar table after dataTables loads */
+#guitar {
+  display: none;
+}
+
+/* customize datatables */
+
+.dataTable > thead > tr > th {
+  color: white;
+  text-align: left;
+  padding-left: 10px;
+  @include linear-gradient( $main-light, $main-color);
+}
+
+.dataTable tbody td > a {
+  color: lighten($main-color, 10%);
+  font-size: 1.0em;
+  font-weight: bold;
+  text-decoration: none;
+ }
+
+.dataTables_filter, .dataTables_length {
+  margin-bottom: 15px;
+}
+
+.dataTable > tbody > tr:nth-child(odd) > td, 
+.dataTable > tbody > tr:nth-child(odd) > th {
+  background-color: lighten($main-color, 55%);
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  color: $main-color;
+}
+
+
