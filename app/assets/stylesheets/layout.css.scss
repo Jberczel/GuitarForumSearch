@@ -1,14 +1,10 @@
 $main-color: #3E5C92;
 $main-light: lighten($main-color, 20%);
-$input-border-focus: $main-color;
-$input-color: $main-color;
 
 body {
   margin: 0;
   padding: 0;
-  background-color: #FFF;
-  font-size: 14px;
-  font-family: $verdana;
+
 }
 
 header {
