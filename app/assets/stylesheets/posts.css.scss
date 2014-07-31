@@ -23,17 +23,25 @@
   text-decoration: none;
  }
 
-.dataTables_filter, .dataTables_length {
-  margin-bottom: 15px;
+.dataTable tr td:nth-child(1) {
+    min-width: 400px;
 }
+
+.dataTable tr td:nth-child(2) {
+    min-width: 200px;
+}
+
+.dataTables_filter label {
+  margin-right: 8px;
+}
+
+/* .dataTables_filter, .dataTables_length {
+  margin-bottom: 15px;
+} */
 
 .dataTable > tbody > tr:nth-child(odd) > td, 
 .dataTable > tbody > tr:nth-child(odd) > th {
-  background-color: lighten($main-color, 55%);
-}
-
-.dataTables_wrapper .dataTables_paginate .paginate_button {
-  color: $main-color;
+  background-color: lighten($main-color, 50%);
 }
 
 
