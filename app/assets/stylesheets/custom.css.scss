@@ -4,6 +4,16 @@ $input-border-focus: $main-color;
 $input-color: $main-color;
 
 
+
+
+div.container {
+  @include outer-container;
+  .box {
+    @include span-columns(6);
+  }
+}
+
+
 @mixin gradient($from, $to) {
   /* fallback/image non-cover color */
   background-color: $from;
@@ -132,4 +142,3 @@ footer ul li {
   margin-left: 10px;
 }
 
- 

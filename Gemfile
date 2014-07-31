@@ -54,3 +54,7 @@ gem 'newrelic_rpm'
 
 gem 'pace-rails'
 
+gem 'neat'
+
+
+
