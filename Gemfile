@@ -52,8 +52,5 @@ end
 
 gem 'newrelic_rpm'
 
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
-
 gem 'pace-rails'
 

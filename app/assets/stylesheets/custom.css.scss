@@ -3,8 +3,6 @@ $main-light: lighten($main-color, 20%);
 $input-border-focus: $main-color;
 $input-color: $main-color;
 
-@import "bootstrap-sprockets";
-@import "bootstrap";
 
 @mixin gradient($from, $to) {
   /* fallback/image non-cover color */
