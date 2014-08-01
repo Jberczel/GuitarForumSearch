@@ -8,7 +8,21 @@
 </head>
 <body>
 
-  <header>Search AGF Classifieds</header>
+<nav class="bourbon">
+  <div id="logo">
+      <h2 class="logo-acoustic">acoustic</h2>
+      <h2 class="logo-guitar">guitar</h2>
+      <h2 class="logo-forum">forum</h2>
+  </div>
+</nav>
+
+  <%= render 'layouts/header' %>
+
+  <section class="subtitle">
+  <h2>A <strong>fast</strong> way to <strong>search</strong> for <strong>Guitars</strong> on <strong>AGF Classifieds</strong>.</h2>
+</section>
+
+ 
   <div class="container">
     <%= yield %>
   </div>

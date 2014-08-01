@@ -1,21 +1,17 @@
 $main-color: #3E5C92;
 $main-light: lighten($main-color, 20%);
 
+$ltblue: #D5EEFB;
+$midblue: #AADBF5;
+$dkblue: #41A8DF;
+$dkerblue: #298EC3;
+$textblue: #072f44;
+$body-line-height: $base-line-height;
+
 body {
   margin: 0;
   padding: 0;
 
-}
-
-header {
-  color: #FFF;
-  padding: 20px;
-  font-size: 30px;
-  font-weight: bold;
-  margin-bottom: 30px;
-  text-align: center;
-  @include linear-gradient(#777, #444);
-  @include box-shadow(0 0 6px 3px #000);
 }
 
 .container {
@@ -27,6 +23,46 @@ footer {
   padding: 20px;
 }
 
+header {
+  background-color: $dkerblue;
+  @include clearfix();
+  padding: 0.5em 1em;
+  text-align: center;
 
+  .wrapper {
+    @include outer-container;
+    @include media($mobile) {
+      @include span-columns(4);
+    }
+  }
+
+  h2 {
+    color: #fff;
+    font-family: $helvetica;
+    font-weight: 300;
+    line-height: $body-line-height;
+    float: left;
+    letter-spacing: -2px;
+    padding-left: 5px;
+  }
+
+  .source {
+    @include inline-block;
+    background-color: white;
+    border-radius: 3px;
+    color: $dkerblue;
+    font-size: em(14);
+    font-weight: bold;
+    margin-right: .5em;
+    margin-top: .5em;
+    padding: .5em 1em;
+    text-decoration: none;
+    float: right;
+
+    &:hover {
+      background-color: rgba(white, .7);
+    }
+  }
+}
 
 
