@@ -6,17 +6,18 @@
   color: white;
 }
 
+
 @import 'bourbon';
 
 @import 'base/base';
 
-@import 'grid-settings';
 
+@import 'grid-settings';
 @import 'neat';
 
+
 @import 'layout';
-@import 'nav';
-@import 'subtitle';
+
 
 @import 'posts';
 

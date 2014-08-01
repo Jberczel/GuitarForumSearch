@@ -5,6 +5,11 @@
 /* display guitar table after dataTables loads */
 #guitar {
   display: none;
+
+}
+
+#guitar_wrapper {
+  padding: 50px 0;
 }
 
 .dataTables_length {

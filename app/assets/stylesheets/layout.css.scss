@@ -18,51 +18,10 @@ body {
   @include outer-container;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-}
+@import 'nav';
+@import 'header';
+@import 'footer';
 
-header {
-  background-color: $dkerblue;
-  @include clearfix();
-  padding: 0.5em 1em;
-  text-align: center;
 
-  .wrapper {
-    @include outer-container;
-    @include media($mobile) {
-      @include span-columns(4);
-    }
-  }
-
-  h2 {
-    color: #fff;
-    font-family: $helvetica;
-    font-weight: 300;
-    line-height: $body-line-height;
-    float: left;
-    letter-spacing: -2px;
-    padding-left: 5px;
-  }
-
-  .source {
-    @include inline-block;
-    background-color: white;
-    border-radius: 3px;
-    color: $dkerblue;
-    font-size: em(14);
-    font-weight: bold;
-    margin-right: .5em;
-    margin-top: .5em;
-    padding: .5em 1em;
-    text-decoration: none;
-    float: right;
-
-    &:hover {
-      background-color: rgba(white, .7);
-    }
-  }
-}
 
 

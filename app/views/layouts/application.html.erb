@@ -8,25 +8,13 @@
 </head>
 <body>
 
-<nav class="bourbon">
-  <div id="logo">
-      <h2 class="logo-acoustic">acoustic</h2>
-      <h2 class="logo-guitar">guitar</h2>
-      <h2 class="logo-forum">forum</h2>
-  </div>
-</nav>
+<%= render 'layouts/navbar' %>
+<%= render 'layouts/header' %>
 
-  <%= render 'layouts/header' %>
+<div class="container">
+  <%= yield %>
+</div>
 
-  <section class="subtitle">
-  <h2>A <strong>fast</strong> way to <strong>search</strong> for <strong>Guitars</strong> on <strong>AGF Classifieds</strong>.</h2>
-</section>
-
- 
-  <div class="container">
-    <%= yield %>
-  </div>
-  <footer>Created and Maintained by @Jberczel</footer>
-
+<%= render 'layouts/footer' %>
 </body>
 </html>

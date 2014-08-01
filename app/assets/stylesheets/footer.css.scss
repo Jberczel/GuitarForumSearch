@@ -1,0 +1,19 @@
+footer {
+  background-color: $bourbon-nav-background-color;
+  padding: 2rem 0;
+
+  .footer-text {
+    @include outer-container;
+    p {
+      color: #bbb;
+      font-size: 1.125em;
+    }
+
+    a {
+      color: white;
+      font-weight: bold;
+    }
+    
+  }
+}
+
