@@ -7,8 +7,17 @@
   display: none;
 }
 
-/* customize datatables */
+.dataTables_length {
+  margin-top: 10px;
+  }
 
+.dataTable > thead > tr > th {
+  padding-left: 10px;
+}
+
+
+/* customize datatables */
+/* 
 .dataTable > thead > tr > th {
   color: white;
   text-align: left;
@@ -35,13 +44,15 @@
   margin-right: 8px;
 }
 
-/* .dataTables_filter, .dataTables_length {
-  margin-bottom: 15px;
-} */
+.dataTables_filter, .dataTables_length {
+ margin-bottom: 15px;
+}
 
 .dataTable > tbody > tr:nth-child(odd) > td, 
 .dataTable > tbody > tr:nth-child(odd) > th {
   background-color: lighten($main-color, 50%);
 }
+
+ */
 
 

@@ -1,6 +1,10 @@
 @import 'pace/pace-theme-big-counter';
 
 @import 'dataTables/jquery.dataTables';
+/* override default color */
+.pace .pace-progress:after {
+  color: white;
+}
 
 @import 'bourbon';
 
@@ -14,7 +18,3 @@
 
 @import 'posts';
 
-/* override default color */
-.pace .pace-progress:after {
-  color: white;
-}
