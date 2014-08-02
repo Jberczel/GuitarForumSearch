@@ -5,17 +5,17 @@
 <table id="guitar" class="display" cellspacing="0" width="100%">
   <thead>
     <tr>
-      <th>Thread</th>
-      <th>Last Post</th>
-      <th>Replies</th>
-      <th>Views</th>
+      <th class="listing">Thread</th>
+      <th class="last-post">Last Post</th>
+      <th class="replies">Replies</th>
+      <th class="views">Views</th>
     </tr>
   </thead>
 
   <tbody>
     <% @posts.each do |p| %>
       <tr>
-        <td>
+        <td class="listing">
           <a href="http://www.acousticguitarforum.com/forums/<%= p.link %>" target="_blank">
             <%= p.title %>
           </a>
@@ -23,9 +23,9 @@
             <%= p.author%>
         </td>
         <% date, person = getDateAndPerson(p.last_post) %>
-        <td><%= date %> <br>by <%= person %></td>
-        <td><%= p.replies %></td>
-        <td><%= p.views %></td>
+        <td class="last-post"><%= date %> <br>by <%= person %></td>
+        <td class="replies"><%= p.replies %></td>
+        <td class="views"><%= p.views %></td>
       </tr>
     <% end %>
   </tbody>

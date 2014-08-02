@@ -6,7 +6,7 @@ nav.bourbon {
   background-color: $bourbon-nav-background-color;
   padding: 0 2em 0 1em;
 
-  @include media(max-width em(510)){
+  @include media(max-width em(500)){
     padding: 0;
   };
 
@@ -21,7 +21,6 @@ nav.bourbon {
     font-weight: 600;
     letter-spacing: -2px;
 
-    
     &.logo-guitar {
       padding-left: 102px;
     }
