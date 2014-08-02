@@ -29,7 +29,7 @@
     background-color: white;
     border-radius: 3px;
     color: $dkerblue;
-    font-size: em(14);
+
     font-weight: bold;
     margin-right: .5em;
     margin-top: .5em;
@@ -50,6 +50,7 @@
 
       .button {
         margin: 0;
+        font-size: 1.5em;
         @include span-columns(6);
       }
     }

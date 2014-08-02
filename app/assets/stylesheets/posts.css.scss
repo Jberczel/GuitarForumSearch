@@ -40,11 +40,11 @@
 
 .replies, .views {
   @include media(max-width 900px) {
-          display: none;
+          display: hidden;
   }
 }
 .last-post {
-  @include media(max-width 600px) {
+  @include media(max-width 900px) {
           display: none;
   }
 }
