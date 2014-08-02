@@ -21,7 +21,7 @@ header {
     padding-left: 5px;
   }
 
-  .source {
+  .button {
     @include inline-block;
     background-color: white;
     border-radius: 3px;
@@ -38,6 +38,20 @@ header {
       background-color: rgba(white, .7);
     }
   }
+
+  .buttons {
+    float: right;
+    @include media(max-width 1050px) {
+      @include span-columns(12);
+      margin-bottom: 20px;
+
+      .button {
+        margin: 0;
+        @include span-columns(6);
+      }
+    }
+  }
+
 }
 
 
