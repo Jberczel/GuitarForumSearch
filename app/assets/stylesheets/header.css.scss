@@ -29,7 +29,6 @@
     background-color: white;
     border-radius: 3px;
     color: $dkerblue;
-
     font-weight: bold;
     margin-right: .5em;
     margin-top: .5em;
@@ -46,7 +45,7 @@
     float: right;
     @include media(max-width 1050px) {
       @include span-columns(12);
-      margin-bottom: 20px;
+      margin: 20px 0;
 
       .button {
         margin: 0;

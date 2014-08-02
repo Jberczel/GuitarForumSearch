@@ -24,6 +24,8 @@
   display: none;
 }
 
+
+
 .dataTable > thead > tr > th {
   padding-left: 10px;
 }
@@ -40,7 +42,7 @@
 
 .replies, .views {
   @include media(max-width 900px) {
-          display: hidden;
+          display: none;
   }
 }
 .last-post {
@@ -48,6 +50,7 @@
           display: none;
   }
 }
+
 
 
 
