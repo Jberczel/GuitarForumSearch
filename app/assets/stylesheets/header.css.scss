@@ -69,4 +69,14 @@ section.subtitle {
       padding: 20px;
     }
   }
+  .why {
+    @include linear-gradient($dkerblue, darken($dkerblue, 5%));
+    color:white;
+    font-size: 1.25em;
+
+    padding: 22.5px 0 50px 0;
+    p {
+      font-size: 1.5em;
+    }
+  }
 }
