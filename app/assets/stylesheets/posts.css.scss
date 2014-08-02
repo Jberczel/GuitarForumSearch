@@ -26,14 +26,19 @@
 
 }
 
-
-.dataTables_length {
-  margin-top: 10px;
-  }
-
 .dataTable > thead > tr > th {
   padding-left: 10px;
 }
+
+.dataTable {
+  line-height: 1.0em;
+
+  a {
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+}
+
 
 
 /* customize datatables */
