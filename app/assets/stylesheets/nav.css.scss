@@ -1,29 +1,30 @@
-$bourbon-nav-background-color: #5B5E63;
-
 nav.bourbon {
   @include clearfix;
   -webkit-font-smoothing: antialiased;
   background-color: $bourbon-nav-background-color;
-  padding: 0 2em 0 1em;
+  padding: 0 1.0em;
 
-  @include media(max-width em(500)){
+  @include media($mobile) {
     padding: 0;
   };
 
   div#logo {
-    padding: 10px;
+    padding: 0.625em;
   }
+
+  // create logo from css styling
   h2 {
     color: rgba(#fff, .7);  
     font-size: 2.5em;
-    margin-bottom: 0;
-    line-height: .6;
     font-weight: 600;
     letter-spacing: -2px;
+    line-height: .6; 
+    margin-bottom: 0;
 
     &.logo-guitar {
       padding-left: 102px;
     }
+    
     &.logo-forum {
       font-size: 1.48em;
       line-height: .8;

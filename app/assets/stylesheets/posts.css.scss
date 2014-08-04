@@ -2,20 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'dataTables/jquery.dataTables';
+
+
 #search {
   @include outer-container;
-  padding-top: 25px;
-  padding-bottom: 75px;
-  margin-bottom: 75px;
-  min-height: 550px;
+  padding-top: 1.5em;
+  padding-bottom: 4.5em;
+  margin-bottom: 4.5em;
+  min-height: 600px; 
+
   h2 {
-    font-size: 2.25rem;
-    font-weight: 500;
-    line-height: 1.2em;
-    margin:0 auto 0;
+    font-size: 2.25em;
+    font-weight: bold;
     text-align: center;
-    text-shadow: 0px 2px 2px darken($light-gray, 10%);
-  
+    text-shadow: 0px 2px 2px darken($light-gray, 10%); 
   }
 }
 
@@ -23,8 +24,6 @@
 #guitar {
   display: none;
 }
-
-
 
 .dataTable > thead > tr > th {
   padding-left: 10px;
@@ -34,24 +33,31 @@
   line-height: 1.0em;
 
   a {
-    font-size: 1.1em;
-    font-weight: 500;
+    font-size: 1.2em;
+    font-weight: 400;
   }
 }
 
-
+//responsive styling
 .replies, .views {
-  @include media(max-width 900px) {
+  @include media($tablet) {
           display: none;
   }
 }
+
 .last-post {
-  @include media(max-width 900px) {
+  @include media($mobile) {
           display: none;
   }
 }
 
 
 
+
+.dataTables_info, .dataTables_paginate {
+  @include media($mobile) {
+    font-size: 0.8em;
+  }
+}
 
 

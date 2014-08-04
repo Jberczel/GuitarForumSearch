@@ -1,4 +1,4 @@
-  header {
+header {
   background-color: $dkerblue;
   @include clearfix();
   padding: 1.2em;
@@ -13,13 +13,11 @@
 
   h2 {
     color: #fff;
-    font-family: $helvetica;
     font-weight: 300;
-    line-height: $body-line-height;
     float: left;
     letter-spacing: -2px;
-    padding-left: 5px;
-    @include media(max-width 1050px) {
+
+    @include media(max-width 1100px) {
       float:none;
     }
   }
@@ -34,16 +32,17 @@
     margin-top: .5em;
     padding: .5em 2em;
     text-decoration: none;
-    float: right;
 
     &:hover {
       background-color: rgba(white, .7);
+      cursor: pointer;
     }
   }
 
   .buttons {
     float: right;
-    @include media(max-width 1050px) {
+
+    @include media(max-width 1100px) {
       @include span-columns(12);
       margin: 20px 0;
 
@@ -58,40 +57,45 @@
 
 }
 
+//************************************************************************//
+// Subheader Section
+//************************************************************************//
 
-//subheader section
-
-section.subtitle {
+.subtitle {
   @include linear-gradient(#53aee0, darken(#53aee0, 5%));
   display: block;
   text-align: center;
 
   h2 {
     color: white;
-    font-size: 4.5rem;
+    font-size: 4.5em;
     font-weight: 100;
     line-height: 1.2em;
-    margin:0 auto 0;
-    max-width: 980px;
+    margin:0 auto;
+    max-width: 900px;
     padding: 50px 0;
-    text-align: center;
     text-shadow: 0px 2px 2px darken(#53aee0, 25%);
 
     strong {
       font-weight: 500;
     }
 
-    @include media(max-width 768px) {
+    @include media($tablet) {
       font-size: 2rem;
       line-height: 1.4em;
-      padding: 20px;
+      padding: 1.5em 0;
+    }
+
+    @include media($mobile) {
+      padding: 2em 0;
     }
   }
+  
   .why {
     @include linear-gradient($dkerblue, darken($dkerblue, 5%));
     color:white;
     font-size: 1.25em;
     line-height:1.75em;
-    padding: 30px 0;
+    padding: 2em 0;
   }
 }
