@@ -5,9 +5,8 @@
   color: white;
 
   @include media($mobile) {
-    font-size: 4.0em;
-    height:  4.0em;
-    width: 4.0em;
+    font-size: 2.0em;
+
   }
 }
 
