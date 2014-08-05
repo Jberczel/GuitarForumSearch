@@ -4,7 +4,6 @@
 
 @import 'dataTables/jquery.dataTables';
 
-
 #search {
   @include outer-container;
   padding-top: 1.5em;
@@ -20,21 +19,23 @@
   }
 }
 
-/* display guitar table after dataTables loads */
+
 #guitar {
+  /* display guitar table after dataTables loads */
   display: none;
-}
-
-.dataTable > thead > tr > th {
-  padding-left: 10px;
-}
-
-.dataTable {
   line-height: 1.0em;
 
   a {
-    font-size: 1.2em;
-    font-weight: 400;
+    font-size: 1.1em;
+    font-weight: 500;
+  }
+
+  tbody tr:hover {
+    background: #F8FCCF; 
+  }
+
+  thead tr {
+    th { padding-left: 10px; }
   }
 }
 
@@ -51,9 +52,7 @@
   }
 }
 
-
-
-
+//resize pagination for mobile
 .dataTables_info, .dataTables_paginate {
   @include media($mobile) {
     font-size: 0.8em;
