@@ -6,6 +6,7 @@
 
 #search {
   @include outer-container;
+  display: none;
   padding-top: 1.5em;
   padding-bottom: 4.5em;
   margin-bottom: 4.5em;
@@ -22,7 +23,7 @@
 
 #guitar {
   /* display guitar table after dataTables loads */
-  display: none;
+
   line-height: 1.0em;
 
   a {

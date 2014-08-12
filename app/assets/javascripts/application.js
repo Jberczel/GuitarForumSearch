@@ -18,20 +18,22 @@
 //= require_tree .
 
 $(document).ready(function() {
-  $('#guitar').dataTable( {
-
+  $("#guitar").dataTable( {
     "ordering": false
-  } ).fadeIn("slow");
+  });
 
-    function scrollToSection() {  
-      $('html,body').animate(
-        { scrollTop: $("#search").offset().top },'slow');
-  }
-
-  $(".btn-search").click(function() {
+  $(".btn-search").click(function() { 
      scrollToSection();
   });
 
+    //helper function for scroll effect
+   function scrollToSection() {  
+    $search = $("#search");
+    $search.fadeIn();
+    $('html,body').animate({ 
+      scrollTop: $search.offset().top },'slow');
+  }
+});
 
 
-} );
+
