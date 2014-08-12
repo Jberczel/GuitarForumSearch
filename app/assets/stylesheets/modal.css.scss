@@ -99,6 +99,12 @@
       margin-top: 10em;
     }
 
+    @include media($mobile) {
+      @include span-columns(4);
+      padding: 0;
+      margin: 0;
+    }
+
     h1 {
       color: $base-font-color;
       margin-bottom: .6em;
