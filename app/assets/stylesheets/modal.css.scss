@@ -53,6 +53,9 @@
     @include size(1.5em);
     cursor: pointer;
     background: $modal-background;
+      @include media($mobile) {
+        @include position(absolute, .75em .75em 0 0);
+      }
 
     &:after,
     &:before {
@@ -101,8 +104,8 @@
 
     @include media($mobile) {
       @include span-columns(4);
-      padding: 0;
-      margin: 0;
+      padding: .2em;
+      margin:  .2em;
     }
 
     h1 {
@@ -126,10 +129,6 @@
       &.body { 
         color: $base-font-color;
         line-height: 1.45em;
-
-        @include media($tablet) {
-          @include columns(2 8em);
-        }
       }
     }
 
