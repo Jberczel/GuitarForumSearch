@@ -15,17 +15,32 @@ class Post < ActiveRecord::Base
       numPages = data.css('td.vbmenu_control').text.split(' ').last.to_i    
     rescue StandardError=>e
       puts "Error: #{e}"
-      puts "Was not able to parse website and create records."
+      puts "Test parse failed."
     else
       destroy_all         # delete old records
       reset_pk_sequence   # reset primary key to 0
 
+       # exception handling for each page
       1.upto(numPages) do |i|
-        page_url = url + "&page=#{i}"
-        data = Nokogiri::HTML(open(page_url))
-        listings = data.css('#threadbits_forum_17 tr')
-        listings  = listings[7..-1] if i == 1   # exclude sticky topics on first page
-        parse_create_records(listings)
+        retries = 2
+        puts "\tparsing page #{i}..."
+       
+        begin     
+          page_url = url + "&page=#{i}"
+          data = Nokogiri::HTML(open(page_url))
+          listings = data.css('#threadbits_forum_17 tr')
+          listings  = listings[7..-1] if i == 1   # exclude sticky topics on first page
+          parse_create_records(listings)
+        rescue
+          puts "Error: #{e}"
+          puts "Was not able to parse page #{i}."
+          if retries > 0
+            puts "Trying #{retries} more times"
+            retries -= 1
+            sleep 1
+            retry
+          end
+        end      
       end
     end
   end
