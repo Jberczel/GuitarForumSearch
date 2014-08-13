@@ -35,7 +35,7 @@ class Post < ActiveRecord::Base
           puts "Error: #{e}"
           puts "Was not able to parse page #{i}."
           if retries > 0
-            puts "Trying #{retries} more times"
+            puts ".Trying #{retries} more times"
             retries -= 1
             sleep 1
             retry
@@ -44,6 +44,7 @@ class Post < ActiveRecord::Base
       end
     end
   end
+
 
   private
     def self.parse_create_record(row)

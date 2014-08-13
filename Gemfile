@@ -56,5 +56,9 @@ gem 'pace-rails'
 
 gem 'neat'
 
+gem 'unicorn'
+
+gem 'delayed_job_active_record'
+
 
 
