@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
     require 'open-uri' 
     begin
       data = Nokogiri::HTML(open(URL))
-      check_page_structure(data)
+      test_page_scrape(data)
       numPages = data.css('td.vbmenu_control').text.split(' ').last.to_i  
     rescue StandardError=>e
       puts "Error: #{e}"
@@ -67,7 +67,8 @@ class Post < ActiveRecord::Base
       end
     end
 
-    def self.check_page_structure(data)
+    # test if app can scrape a thread and create record
+    def self.test_page_scrape(data)
       row = data.css('#threadbits_forum_17 tr')[7]  # skip first 7 sticky threads
       parse_create_record(row)
     end
