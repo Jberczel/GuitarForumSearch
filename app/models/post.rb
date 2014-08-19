@@ -28,13 +28,14 @@ class Post < ActiveRecord::Base
         puts "\tparsing page #{i}..."     
         begin     
           scrape_page(i)
+          sleep 2
         rescue StandardError=>e
           puts "Error: #{e}"
           puts "Was not able to parse page #{i}."
           if retries > 0
             puts ".Trying #{retries} more times"
             retries -= 1
-            sleep 1
+            sleep 2
             retry
           end
         end      
