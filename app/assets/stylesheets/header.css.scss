@@ -94,15 +94,15 @@ header {
     }
 
     @include media($big-screen) {
-      font-size: 5rem;
-    }
+      padding: 100px 0;
+    }  
   }
-  
-  .why {
-    @include linear-gradient($dkerblue, darken($dkerblue, 5%));
-    color:white;
-    font-size: 1.25em;
-    line-height:1.75em;
-    padding: 2em 0;
-  }
+}
+
+.why {
+  @include linear-gradient($dkerblue, darken($dkerblue, 5%));
+  color:white;
+  font-size: 1.25em;
+  line-height:1.75em;
+  padding: 2em 0;
 }
