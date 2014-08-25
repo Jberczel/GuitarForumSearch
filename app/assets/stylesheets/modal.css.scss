@@ -5,6 +5,7 @@
   $modal-close-color: $dkerblue;  
   $modal-image-height: 135px;
   $modal-image-width: $modal-image-height;
+  min-width: 116px;
 
   label {
     cursor: pointer;
@@ -128,6 +129,7 @@
 
       &.body { 
         color: $base-font-color;
+        font-weight: normal;
         line-height: 1.45em;
       }
     }
