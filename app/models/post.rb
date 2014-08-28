@@ -2,7 +2,7 @@ class Post < ActiveRecord::Base
   default_scope { order(:id) }
 
   URL = "http://www.acousticguitarforum.com/forums/forumdisplay.php"\
-        "?f=17&pp=200&sort=lastpost&order=desc&daysprune=100"
+        "?f=17&pp=200&sort=lastpost&order=desc&daysprune=200"
 
   # scrape guitar forum pages and create records in posts table
   def self.scrape_create
