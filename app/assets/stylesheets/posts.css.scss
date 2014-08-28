@@ -53,6 +53,18 @@
   }
 }
 
+.dataTables_filter {
+  @include media($tablet) {
+    padding-right: 1em;
+  }
+}
+
+.dataTables_length {
+  @include media($tablet) {
+    padding-left: 1em;
+  }
+}
+
 //resize pagination for mobile
 .dataTables_info, .dataTables_paginate {
   @include media($mobile) {
