@@ -1,3 +1,5 @@
+
+
 <section id="search">
 
 <h2>For Sale</h2>
@@ -13,6 +15,7 @@
   </thead>
 
   <tbody>
+    <% cache(cache_key_for_posts) do %>
     <% @posts.each do |p| %>
       <tr>
         <td class="listing">
@@ -27,6 +30,7 @@
         <td class="replies"><%= p.replies %></td>
         <td class="views"><%= p.views %></td>
       </tr>
+    <% end %>
     <% end %>
   </tbody>
   
