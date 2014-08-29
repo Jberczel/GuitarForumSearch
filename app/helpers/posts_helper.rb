@@ -5,7 +5,8 @@ module PostsHelper
   end
 
   def cache_key_for_posts
-    last_updated_at = Post.first.updated_at.try(:utc).try(:to_s, :number)
-    "/all-#{last_updated_at}"
+    first_updated_at = Post.first.updated_at.to_i
+    last_updated_at = Post.last.updated_at.to_i
+    "/all-#{first_updated_at}-#{last_updated_at}"
   end
 end
