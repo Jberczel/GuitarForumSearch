@@ -5,8 +5,8 @@ module PostsHelper
   end
 
   def cache_key_for_posts
-    first_updated_at = Post.first.updated_at.to_i
+    # TODO: while parsing pages, requests to page will not pull all records until complete
     last_updated_at = Post.last.updated_at.to_i
-    "/all-#{first_updated_at}-#{last_updated_at}"
+    "/all-#{last_updated_at}"
   end
 end
