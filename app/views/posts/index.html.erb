@@ -23,7 +23,7 @@
             <%= p.title %>
           </a>
           <br>
-            <%= p.author%>
+            <span class="author"><%= p.author%></span>
         </td>
         <% date, person = getDateAndPerson(p.last_post) %>
         <td class="last-post"><%= date %> <br>by <%= person %></td>

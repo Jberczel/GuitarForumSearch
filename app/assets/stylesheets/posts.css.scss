@@ -40,14 +40,23 @@
   }
 }
 
+.listing {
+  max-width: 600px;
+  .author {
+    font-size: 0.9em;
+  }
+}
+
 //responsive styling
 .replies, .views {
+  //font-size: 0.9em;
   @include media($tablet) {
           display: none;
   }
 }
 
 .last-post {
+  font-size: 0.9em;
   @include media($mobile) {
           display: none;
   }
