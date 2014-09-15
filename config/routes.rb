@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
-  get 'posts/index'
 
-  root 'posts#index'
+  
+  get 'static_pages/home'
+
+  get 'static_pages/about'
+
+  root 'static_pages#home'
+
+  match '/gear',    to: 'gear#index',     via: 'get'
+  match '/guitars', to: 'posts#index',   via: 'get'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

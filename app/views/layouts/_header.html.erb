@@ -2,22 +2,11 @@
   <div class="wrapper">
     <h2>Search the last 6 months of guitar sales.  Updated hourly.</h2>
     <div class="buttons">
-      <%= render 'layouts/modal' %>
-      <a class="button btn-search"> Search </a>
+    <!--   <%= render 'layouts/modal' %> -->
+      <%= link_to "Guitars", guitars_path, class: "button" %>
+      <%= link_to "Gear", gear_path, class: "button" %>
+
     </div>
   </div>
 </header>
 
-<section class="subtitle">
-  <h2>A <strong>faster</strong> way to <strong>search</strong> for <strong>Guitars</strong> on <strong>AGF Classifieds</strong>.</h2>
-
-  <ul class="why">
-    <li>Research and Compare Listings for Price and Popularity</li>
-    <li>No Time Restriction Between Search Queries</li>
-    <li>Optimized for Tablet and Mobile</li>
-    <li>Search by Brand or Model</li>
-    <li>Won't Tax the AGF Server</li>
-    <li>Quick and Streamlined</li>
-  </ul>
-
-</section>

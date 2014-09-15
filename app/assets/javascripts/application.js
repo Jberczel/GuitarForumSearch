@@ -17,23 +17,5 @@
 //= require dataTables/jquery.dataTables
 //= require_tree .
 
-$(document).ready(function() {
-  $("#guitar").dataTable( {
-    "ordering": false
-  });
-
-  $(".btn-search").click(function() { 
-     scrollToSection();
-  });
-
-    //helper function for scroll effect
-   function scrollToSection() {  
-    $search = $("#search");
-    $search.fadeIn();
-    $('html,body').animate({ 
-      scrollTop: $search.offset().top },'slow');
-  }
-});
-
 
 

@@ -3,10 +3,10 @@
 <% end %>
 
 <section class="search">
+  
+<h3>Gear</h3>
 
-<h3>Guitars</h3>
-
-<table id="guitars" class="display" cellspacing="0" width="100%">
+<table id="gear" class="display" cellspacing="0" width="100%">
   <thead>
     <tr>
       <th class="listing">Thread</th>
@@ -17,24 +17,25 @@
   </thead>
 
   <tbody>
-    <% cache(cache_key_for_posts) do %>
-    <% @posts.each do |p| %>
+    <% cache(cache_key_for_gear) do %>
+    <% @gear.each do |g| %>
       <tr>
         <td class="listing">
-          <a href="http://www.acousticguitarforum.com/forums/<%= p.link %>" target="_blank">
-            <%= p.title %>
+          <a href="http://www.acousticguitarforum.com/forums/<%= g.link %>" target="_blank">
+            <%= g.title %>
           </a>
           <br>
-            <span class="author"><%= p.author%></span>
+            <span class="author"><%= g.author%></span>
         </td>
-        <% date, person = getDateAndPerson(p.last_post) %>
+        <% date, person = getDateAndPerson(g.last_post) %>
         <td class="last-post"><%= date %> <br>by <%= person %></td>
-        <td class="replies"><%= p.replies %></td>
-        <td class="views"><%= p.views %></td>
+        <td class="replies"><%= g.replies %></td>
+        <td class="views"><%= g.views %></td>
       </tr>
     <% end %>
     <% end %>
   </tbody>
   
 </table>
+
 </section>

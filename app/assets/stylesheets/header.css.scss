@@ -30,6 +30,8 @@ header {
     border-radius: 3px;
     color: $dkerblue;
     font-weight: bold;
+    // min-width to align guitars and gear buttons
+    min-width: 120px;
     margin-right: .5em;
     margin-top: .5em;
     padding: .5em 2em;
