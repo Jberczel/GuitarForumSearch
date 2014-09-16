@@ -1,3 +1,16 @@
 // Place all the styles related to the static_pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.about {
+  @include outer-container;
+  @include margin(2em null 2em null);
+
+  @include media($tablet) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+
+}
+
+

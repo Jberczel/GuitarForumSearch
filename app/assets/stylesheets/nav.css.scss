@@ -10,6 +10,7 @@ nav.bourbon {
 
   div#logo {
     padding: 0.625em;
+    @include span-columns(6);
   }
 
   // create logo from css styling

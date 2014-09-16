@@ -1,12 +1,37 @@
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important; /* This line and the next line are not necessary unless you need IE6 support */
+  height: 100%;
+  margin: 0 auto -125px; /* the bottom margin is the negative value of the footer's height */
+}
+.sticky-footer, .push {
+  height: 125px; /* .push must be the same height as .footer */
+}
+
+
+
 footer {
   background-color: $bourbon-nav-background-color;
-  padding: 2.0em 0;
+  //padding: 2.0em 0;
+
+
+  @include media($tablet) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 
   .footer-text {
     @include outer-container;
+    @include vertical-align;
     p {
       color: #bbb;
+      margin: 0;
     }
+
 
     a {
       color: white;

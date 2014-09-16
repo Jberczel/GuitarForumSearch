@@ -5,8 +5,9 @@ header {
   @include clearfix();
   padding: 1.2em;
   text-align: center;
-
-  .wrapper {
+  
+  //confling with sticky footer wrapper renamed to 2
+  .wrapper2 {
     @include outer-container;
     @include media($mobile) {
       @include span-columns(4);
