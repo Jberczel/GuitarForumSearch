@@ -1,13 +1,12 @@
-// plugin
-@import 'pace/pace-theme-big-counter';
+
 /* override default color */
-.pace .pace-progress:after {
+/* .pace .pace-progress:after {
   color: white;
 
   @include media($mobile) {
     font-size: 2.0em;
   }
-}
+} */
 
 body {
   margin: 0;
