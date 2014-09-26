@@ -47,7 +47,7 @@ class Gear < ActiveRecord::Base
       page_url = URL + "&page=#{page}"
       data     = Nokogiri::HTML(open(page_url))
       rows     = data.css('#threadbits_forum_54 tr') # ALERT: forum number here
-      rows     = rows[7..-1] if page == 1   # exclude sticky topics on first page
+      rows     = rows[6..-1] if page == 1   # exclude sticky topics on first page
       parse_create_records(rows)
     end
 
