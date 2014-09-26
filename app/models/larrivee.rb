@@ -15,7 +15,7 @@ class Larrivee < ActiveRecord::Base
     else
       destroy_all             # delete old records
       reset_pk_sequence       # reset primary key to 0
-      scrape_pages(16)         # scrape last nth pages of larrivee forum
+      scrape_pages(10)         # scrape last nth pages of larrivee forum
     end
   end
 
@@ -27,7 +27,7 @@ class Larrivee < ActiveRecord::Base
         puts "\tparsing page #{i}..."     
         begin     
           scrape_page(i)
-          sleep 2
+          sleep 1
         rescue StandardError=>e
           puts "Error: #{e}"
           puts "Was not able to parse page #{i}."
