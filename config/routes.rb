@@ -7,8 +7,9 @@ Rails.application.routes.draw do
 
   root 'static_pages#home'
 
-  match '/gear',    to: 'gear#index',    via: 'get'
-  match '/guitars', to: 'posts#index',   via: 'get'
+  match '/gear',     to: 'gear#index',      via: 'get'
+  match '/guitars',  to: 'posts#index',     via: 'get'
+  match '/larrivee', to: 'larrivees#index', via: 'get'
   match '/about',   to: 'static_pages#about', via: 'get'
 
 

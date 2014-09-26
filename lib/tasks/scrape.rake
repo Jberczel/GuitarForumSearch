@@ -11,4 +11,10 @@ namespace :scrape do
     Gear.scrape_create
     puts "scraping complete"
   end
+
+    task larrivee: :environment do
+      puts "scraping LARRIVEE pages..."
+      Larrivee.scrape_create
+      puts "scraping complete"
+  end
 end
