@@ -45,7 +45,7 @@ class Larrivee < ActiveRecord::Base
       page_url = URL + "#{page * 35}" # 35 post per page
       data     = Nokogiri::HTML(open(page_url))
       rows     = data.css('.tborder tr')
-      rows     = page == 0 ? rows[3..-2] : rows[1..-2]   # exclude sticky topics on first page and bottom nav
+      rows     = page == 0 ? rows[4..-2] : rows[1..-2]   # exclude sticky topics on first page and bottom nav
       parse_create_records(rows)
     end
 
@@ -69,7 +69,7 @@ class Larrivee < ActiveRecord::Base
 
     # test if app can scrape a thread and create record
     def self.test_page_scrape(data)
-      row = data.css('.tborder tr')[3]  # skip first 3 sticky threads
+      row = data.css('.tborder tr')[4]  # skip sticky threads
       parse_create_record(row)
     end
 end
