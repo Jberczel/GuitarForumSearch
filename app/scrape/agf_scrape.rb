@@ -1,5 +1,4 @@
 require 'open-uri'
-
 module AgfScrape
 
   # extenders may overide
@@ -33,25 +32,10 @@ module AgfScrape
   end
 
   def scrape_pages(pages)
-     # exception handling for each page
     1.upto(pages) do |i|
-    #   retry_parse(3) { scrape_page(i) }
-    # end
-      retries = 2
-      puts "\tparsing page #{i}..."     
-      begin     
-        scrape_page(i)
-        sleep 2
-      rescue StandardError=>e
-        puts "Error: #{e}\nWas not able to parse page #{i}."
-        if retries > 0
-          puts "Trying #{retries} more times"
-          retries -= 1
-          sleep 2
-          retry
-        end
-      end      
-    end
+      puts "\tparsing page #{i}..."
+      retry_parse(3) { scrape_page(i) }
+     end
   end
 
   def retry_parse(n)
