@@ -1,4 +1,6 @@
 class Larrivee < ActiveRecord::Base
-  extend LarriveeScrape
+  extend PostUtils
   default_scope { order(:id) }
+
+  
 end
