@@ -1,13 +1,13 @@
 module ScrapedPosts
   GUITARS = AgfScraper.new( 
               :url    => "http://www.acousticguitarforum.com/forums/forumdisplay."\
-               "php?f=17&pp=200&sort=lastpost&order=desc&daysprune=200",
+                         "php?f=17&pp=200&sort=lastpost&order=desc&daysprune=200",
               :forum  => 17,
               :sticky => 6 )
 
   GEAR = AgfScraper.new(
-           :url    => "http://www.acousticguitarforum.com/forums/forumdisplay.php"\
-               "?f=54&pp=200&sort=lastpost&order=desc&daysprune=200",
+           :url    => "http://www.acousticguitarforum.com/forums/forumdisplay."\
+                      "php?f=54&pp=200&sort=lastpost&order=desc&daysprune=200",
            :forum  => 54,
            :sticky => 6 )
 
