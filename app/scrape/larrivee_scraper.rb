@@ -1,60 +1,42 @@
-require 'open-uri'
-require 'ostruct'
-
-class LarriveeScraper
-  attr_reader :url, :sticky, :posts, :content, :page_count
-
-  def initialize(args={})
-    @url    = args.fetch(:url)
-    @sticky = args.fetch(:sticky, 3) 
-    @page_count  = args.fetch(:page_count, 10)
-    @posts = []
+class LarriveeScraper < ForumScraper
+  def default_url
+    "http://www.larriveeforum.com/smf/index.php?board=6."
   end
 
-  def posts?
-    !posts.empty?
+  def default_sticky_posts
+    3
   end
 
-  def content
-    @content ||= Nokogiri::HTML(open(url))
-  end
-
-  # starts at 0, not 1
-  def parse_pages
-    return "Scrape Failed" unless scrapable?
-    0.upto(page_count) do |i|
-      puts "\tparsing page #{i}..."
-      retry_parse(3) { parse_single_page(i) }
-     end
+  # select how many pages back in history to scrape
+  def page_count
+    10
   end
 
   private
 
-  def scrapable?
-    content && page_count
+  def parse_table(page_num)
+    data = page_data(page_url(page_num))
+    rows = table_rows(data)
+    remove_sticky_posts(rows, page_num)
   end
 
-  def parse_single_page(page_num)
-    rows = parse_forum_rows(page_num)
-    parse_posts(rows)
+  def page_data(url)
+    Nokogiri::HTML(open(url))
   end
 
-  # most of the concrete data is here
-  def parse_forum_rows(page_num)
-    page_url = url + "#{page_num * 35}"       # 35 post per page
-    data     = Nokogiri::HTML(open(page_url))
-    rows     = data.css('.tborder tr')[1..-2] # exclude header and bottom nav row
-    rows     = rows[sticky..-2] if page_num == 0  # exclude sticky posts
-    rows
+  def page_url(page_num)
+    "#{url}#{(page_num - 1) * 35}"  # 35 posts per page
   end
 
-  def parse_posts(rows)
-    rows.each do |r|
-      parse_post(r)
-    end
+  def table_rows(data)
+    data.css('.tborder tr')[1..-2] # exclude header and bottom nav rows
   end
 
-  def parse_post(row)
+  def remove_sticky_posts(data, page_num)
+    page_num == 1 ? data[sticky_posts..-1] : data
+  end
+
+  def parse_single_post(row)
     title     = row.css('td')[2].text.strip
     author    = row.css('td')[3].text.strip
     replies   = row.css('td')[4].text
@@ -63,17 +45,6 @@ class LarriveeScraper
     link      = row.at_css('td a')['href']
     posts << OpenStruct.new(title: title, link: link, author: author, 
                  last_post: last_post, replies: replies, views: views)
-  end
-
-  def retry_parse(n)
-    begin
-      yield
-      sleep 2
-    rescue StandardError => e
-      puts "Error: #{e}\nWas not able to parse page."
-      raise e if n == 0
-      retry_parse(n - 1)
-    end
   end
 end
 
