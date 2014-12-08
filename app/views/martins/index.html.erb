@@ -1,0 +1,42 @@
+<% content_for :javascript do %>
+    <%= render 'search.js' %>
+<% end %>
+<div class="wrapper">
+  
+
+<section class="search">
+  
+<%= image_tag("martin.png", class: "logo") %>
+
+<table id="martin" class="display" cellspacing="0" width="100%">
+  <thead>
+    <tr>
+      <th class="listing">Thread</th>
+      <th class="replies">Replies</th>
+      <th class="last-post">Last Post</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% cache(cache_key_for_martin) do %>
+    <% @martins.each do |martin| %>
+      <tr>
+        <td class="listing">
+          <a href="http://theunofficialmartinguitarforum.yuku.com/<%= martin.link %>" target="_blank">
+            <%= martin.title %>
+          </a>
+          <br>
+            <span class="author"><%= martin.author%></span>
+        </td>
+        <td class="replies"><%= martin.replies %></td>
+        <td class="last-post"><%= martin.last_post %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+  
+</table>
+
+</section>
+<div class="push"></div>
+</div>

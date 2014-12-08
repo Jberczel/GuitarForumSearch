@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   match '/gear',     to: 'gear#index',      via: 'get'
   match '/guitars',  to: 'posts#index',     via: 'get'
   match '/larrivee', to: 'larrivees#index', via: 'get'
+  match '/martin',   to: 'martins#index',   via: 'get'
   match '/about',   to: 'static_pages#about', via: 'get'
 
 

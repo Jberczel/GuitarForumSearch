@@ -15,9 +15,16 @@ namespace :scrape do
   end
 
   task larrivee: :environment do
-    puts "scraping LARRIVEE pages..."
+    puts "scraping Larrivee pages..."
     scraper = LarriveeScraper.new
     scraper.parse_pages.create_posts(Larrivee)
+    puts "scraping complete"
+  end
+
+  task martin: :environment do
+    puts "scraping Martin pages..."
+    scraper = MartinScraper.new
+    scraper.parse_pages.create_posts(Martin)
     puts "scraping complete"
   end
 end
