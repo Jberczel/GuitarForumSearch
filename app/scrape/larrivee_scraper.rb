@@ -9,7 +9,7 @@ class LarriveeScraper < ForumScraper
 
   # select how many pages back in history to scrape
   def page_count
-    10
+    20
   end
 
   private
@@ -37,8 +37,8 @@ class LarriveeScraper < ForumScraper
   end
 
   def parse_single_post(row)
-    title     = row.css('td')[2].text.strip
-    author    = row.css('td')[3].text.strip
+    title     = row.css('td')[2].text
+    author    = row.css('td')[3].text
     replies   = row.css('td')[4].text
     views     = row.css('td')[5].text
     last_post = row.css('td')[6].text.strip.gsub(/\s{2,}/, ' ')

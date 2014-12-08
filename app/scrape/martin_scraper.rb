@@ -9,7 +9,7 @@ class MartinScraper < ForumScraper
 
   # select how many pages back in history to scrape
   def page_count
-    30
+    40
   end
 
   private
@@ -37,10 +37,11 @@ class MartinScraper < ForumScraper
   end
 
   def parse_single_post(row)
-    title     = row.css('td')[2].text.strip.gsub(/\s{2,}/, ' ')
-    replies   = row.css('td')[3].text.strip
-    last_post = row.css('td')[4].text.strip.gsub(/\s{2,}/, ' ')
-    author    = row.css('td')[5].text.strip
+    fields    = row.css('td')
+    title     = fields[2].text.gsub(/\s{2,}/, ' ')
+    replies   = fields[3].text
+    last_post = fields[4].text.gsub(/\s{2,}/, ' ')
+    author    = fields[5].text.strip
     link      = row.css('td a')[2]['href']
     views     = nil
     posts << OpenStruct.new(title: title, link: link, author: author, 

@@ -32,6 +32,7 @@ class ForumScraper
     @content ||= Nokogiri::HTML(open(url))
   end
 
+  # initialize in subclasses
   def page_count
     raise NotImplementedError
   end
@@ -68,6 +69,7 @@ class ForumScraper
     raise NotImplementedError
   end
 
+  # override in subclasses
   def parse_single_post(row)
     raise NotImplementedError
   end
@@ -81,7 +83,6 @@ class ForumScraper
   def retry_parse(n)
     begin
       yield
-      sleep 2
     rescue StandardError => e
       puts "Error: #{e}\nWas not able to parse page."
       raise e if n == 0
