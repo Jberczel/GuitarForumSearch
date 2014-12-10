@@ -19,7 +19,7 @@ class AgfScraper < ForumScraper
   end
 
   def page_url(page_num)
-    "#{url}&num=#{page_num}"
+    "#{url}&page=#{page_num}"
   end
 
   def page_data(url)
