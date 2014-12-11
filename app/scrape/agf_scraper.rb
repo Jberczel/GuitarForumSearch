@@ -2,11 +2,11 @@ class AgfScraper < ForumScraper
   attr_reader :forum
 
   def post_initialize(args)
-    @forum = args[:forum] || default_forum 
+    @forum = args[:forum] || default_forum
   end
 
   def page_count
-    @page_count ||= 
+    @page_count ||=
       content.css('td.vbmenu_control').text.split(' ').last.to_i
   end
 
@@ -41,7 +41,7 @@ class AgfScraper < ForumScraper
     replies   = row.css('td')[4].text
     views     = row.css('td')[5].text
     link      = row.at_css('td a')['href']
-    posts << OpenStruct.new(title: title, link: link, author: author, 
+    posts << OpenStruct.new(title: title, link: link, author: author,
                  last_post: last_post, replies: replies, views: views)
   end
 end

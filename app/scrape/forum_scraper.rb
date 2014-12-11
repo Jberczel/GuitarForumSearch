@@ -64,12 +64,12 @@ class ForumScraper
     parse_posts(data_table)
   end
 
-  # override in subclasses
+  # parse html table, page_num is url parameter
   def parse_table(page_num)
     raise NotImplementedError
   end
 
-  # override in subclasses
+  # parse single row in html table
   def parse_single_post(row)
     raise NotImplementedError
   end
