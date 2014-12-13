@@ -1,30 +1,35 @@
 namespace :scrape do
-  desc "Scrape AGF For Sale forum"
+  desc "Scrape guitar forum"
+
   task agf: :environment do
-    puts "scraping AGF pages..."
+    puts "scraping agf guitar pages..."
     scraper = GuitarScraper.new
     scraper.parse_pages.create_posts(Post)
-    puts "scraping complete."
+    puts "scraping complete"
   end
 
   task agf_gear: :environment do
-    puts "scraping AGF GEAR pages..."
-    scraper = GearScraper.new
-    scraper.parse_pages.create_posts(Gear)
-    puts "scraping complete"
+    scrape Gear
   end
 
   task larrivee: :environment do
-    puts "scraping Larrivee pages..."
-    scraper = LarriveeScraper.new
-    scraper.parse_pages.create_posts(Larrivee)
-    puts "scraping complete"
+    BiDailyScheduler.new(4).schedule do
+      scrape Larrivee
+    end
   end
 
   task martin: :environment do
-    puts "scraping Martin pages..."
-    scraper = MartinScraper.new
-    scraper.parse_pages.create_posts(Martin)
-    puts "scraping complete"
+    BiDailyScheduler.new(5).schedule do
+      scrape Martin
+    end
   end
 end
+
+def scrape(object)
+  puts "scraping #{object} pages..."
+  scraper = "#{object}Scraper".constantize.new
+  scraper.parse_pages.create_posts(object)
+  puts "scraping complete"
+end
+
+
