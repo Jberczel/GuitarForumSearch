@@ -13,13 +13,13 @@ namespace :scrape do
   end
 
   task larrivee: :environment do
-    BiDailyScheduler.new(4).schedule do
+    BiDailyScheduler.new(:hour => 4).schedule do
       scrape Larrivee
     end
   end
 
   task martin: :environment do
-    BiDailyScheduler.new(5).schedule do
+    BiDailyScheduler.new(:hour => 5).schedule do
       scrape Martin
     end
   end

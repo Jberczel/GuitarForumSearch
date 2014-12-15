@@ -1,8 +1,8 @@
 class HerokuScheduler
   attr_reader :hour
-  
-  def initialize(hour=2)
-    @hour = hour % 12
+
+  def initialize(args={})
+    @hour = args.fetch(:hour,2) % 12
   end
 
   def schedule
