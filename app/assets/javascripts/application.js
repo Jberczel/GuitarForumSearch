@@ -11,11 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require pace/pace
-//= require turbolinks
 //= require dataTables/jquery.dataTables
 //= require_tree .
+//= require turbolinks
+
+
 
 
 
