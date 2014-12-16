@@ -13,15 +13,13 @@ namespace :scrape do
   end
 
   task larrivee: :environment do
-    BiDailyScheduler.new(:hour => 4).schedule do
-      scrape Larrivee
-    end
+    hour = ENV['now'] ? Time.now.hour : 4
+    BiDailyScheduler.new(:hour => hour).schedule { scrape Larrivee }
   end
 
   task martin: :environment do
-    BiDailyScheduler.new(:hour => 5).schedule do
-      scrape Martin
-    end
+    hour = ENV['now'] ? Time.now.hour : 5
+    BiDailyScheduler.new(:hour => hour).schedule { scrape Martin }
   end
 end
 
@@ -31,5 +29,3 @@ def scrape(object)
   scraper.parse_pages.create_posts(object)
   puts "scraping complete"
 end
-
-
