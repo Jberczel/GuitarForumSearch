@@ -14,12 +14,12 @@ namespace :scrape do
 
   task larrivee: :environment do
     hour = ENV['now'] ? Time.now.hour : 4
-    BiDailyScheduler.new(:hour => hour).schedule { scrape Larrivee }
+    QuarterDayScheduler.new(:hour => hour).schedule { scrape Larrivee }
   end
 
   task martin: :environment do
     hour = ENV['now'] ? Time.now.hour : 5
-    BiDailyScheduler.new(:hour => hour).schedule { scrape Martin }
+    QuarterDayScheduler.new(:hour => hour).schedule { scrape Martin }
   end
 end
 
