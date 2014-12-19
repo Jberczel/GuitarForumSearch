@@ -37,13 +37,14 @@ class LarriveeScraper < ForumScraper
   end
 
   def parse_single_post(row)
-    title     = row.css('td')[2].text
-    author    = row.css('td')[3].text
-    replies   = row.css('td')[4].text
-    views     = row.css('td')[5].text
-    last_post = row.css('td')[6].text.strip.gsub(/\s{2,}/, ' ')
+    fields    = row.css('td')
+    title     = fields[2].text
+    author    = fields[3].text
+    replies   = fields[4].text
+    views     = fields[5].text
+    last_post = fields[6].text.strip.gsub(/\s{2,}/, ' ')
     link      = row.at_css('td a')['href']
-    posts << OpenStruct.new(title: title, link: link, author: author, 
+    posts << OpenStruct.new(title: title, link: link, author: author,
                  last_post: last_post, replies: replies, views: views)
   end
 end

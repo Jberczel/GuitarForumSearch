@@ -9,7 +9,7 @@ class MartinScraper < ForumScraper
 
   # select how many pages back in history to scrape
   def page_count
-    40
+    4
   end
 
   private
@@ -44,8 +44,7 @@ class MartinScraper < ForumScraper
     author    = fields[5].text.strip
     link      = row.css('td a')[2]['href']
     views     = nil
-    posts << OpenStruct.new(title: title, link: link, author: author, 
+    posts << OpenStruct.new(title: title, link: link, author: author,
                  last_post: last_post, replies: replies, views: views)
   end
-
 end
