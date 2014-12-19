@@ -1,17 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  link: MyString
-  author: MyString
-  last_post: MyString
-  replies: MyString
-  views: MyString
+  title: FS Martin OM-21
+  link: /some/path
+  author: MartinFanatic
+  last_post: Today at ..
+  replies: 15
+  views: 50
 
 two:
-  title: MyString
-  link: MyString
-  author: MyString
-  last_post: MyString
-  replies: MyString
-  views: MyString
+  title: FS Larrivee D-04
+  link: /some/path/to/larrivee
+  author: jeanL
+  last_post: Yesterday
+  replies: 22
+  views: 240
+
