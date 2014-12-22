@@ -37,10 +37,10 @@ class ForumScraper
     raise NotImplementedError
   end
 
-   def parse_pages
+  def parse_pages
     return "Scrape Failed" unless scrapable?
     1.upto(page_count) do |i|
-      puts "\tparsing page #{i}..."
+      yield(i) if block_given?  # optional print statements
       retry_parse(3) { parse_single_page(i) }
     end
     self
