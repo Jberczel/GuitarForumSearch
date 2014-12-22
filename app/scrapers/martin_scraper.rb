@@ -9,7 +9,7 @@ class MartinScraper < ForumScraper
 
   # select how many pages back in history to scrape
   def page_count
-    4
+    40
   end
 
   private
