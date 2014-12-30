@@ -21,11 +21,17 @@ namespace :scrape do
     hour = ENV['now'] ? Time.now.hour : 5
     QuarterDayScheduler.new(:hour => hour).schedule { scrape Martin }
   end
+
+  task blueridge: :environment do
+    hour = ENV['now'] ? Time.now.hour : 6
+    BiDailyScheduler.new(:hour => hour).schedule { scrape Blueridge }
+  end
 end
 
 def scrape(object)
   puts "scraping #{object} pages..."
   scraper = "#{object}Scraper".constantize.new
-  scraper.parse_pages.create_posts(object)
+  scraper.parse_pages { |page| puts "parsing page #{page}..." }
+  scraper.create_posts(object)
   puts "scraping complete"
 end

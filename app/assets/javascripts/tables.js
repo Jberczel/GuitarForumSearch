@@ -25,3 +25,11 @@ $(".martins.index").ready(function() {
   });
   $(".search").fadeIn(3000);
 })
+
+
+$(".blueridges.index").ready(function() {
+  $("#blueridge").dataTable( {
+    "ordering": false
+  });
+  $(".search").fadeIn(3000);
+})

@@ -11,10 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141208210057) do
+ActiveRecord::Schema.define(version: 20141226182228) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "blueridges", force: true do |t|
+    t.string   "title"
+    t.string   "link"
+    t.string   "author"
+    t.string   "last_post"
+    t.string   "replies"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "views"
+  end
 
   create_table "delayed_jobs", force: true do |t|
     t.integer  "priority",   default: 0, null: false
