@@ -24,7 +24,8 @@
             <span class="author"><%= martin.author%></span>
         </td>
         <td class="replies"><%= martin.replies %></td>
-        <td class="last-post"><%= martin.last_post %></td>
+        <% person, date  = format_martin_last_post(martin.last_post) %>
+        <td class="last-post"><%= date %> <br>by <%= person %></td>
       </tr>
     <% end %>
     <% end %>

@@ -3,4 +3,5 @@ module ApplicationHelper
   def getDateAndPerson(post)
     post.split('by ')
   end
+
 end

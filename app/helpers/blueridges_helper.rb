@@ -4,7 +4,8 @@ module BlueridgesHelper
     "/all-#{last_updated_at}"
   end
 
-  def format_last_post(post)
+  def format_blueridge_last_post(post)
+    # workaround for now
     post.split(' ', 2)
   end
 
