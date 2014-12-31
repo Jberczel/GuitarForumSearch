@@ -4,8 +4,18 @@
 # model remove the '{}' from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  title: 1985 D-21 LE Guitar of the Month
+  link: /some/path
+  author: BlueridgeDude
+  last_post: Today at noon
+  replies: 15
+  views: 60
+
+two:
+  title: Blueridge BR-140A, with Case!
+  link: /some/path/to/blueridge
+  author: fromChina
+  last_post: Yesterday
+  replies: 44
+  views: 335
