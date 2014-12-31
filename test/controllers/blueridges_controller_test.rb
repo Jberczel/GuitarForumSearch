@@ -4,6 +4,7 @@ class BlueridgesControllerTest < ActionController::TestCase
   test "should get blueridge forum" do
     get :index
     assert_response :success
-    assert_select ".search h3", "Blueridge"
+    assert_not_nil  assigns(:blueridges)
+    assert_select   "img.logo"
   end
 end

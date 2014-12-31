@@ -1,9 +1,9 @@
 require 'test_helper'
 
-class PostsControllerTest < ActionController::TestCase
+class GearControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_not_nil  assigns(:posts)
+    assert_not_nil  assigns(:gear)
   end
 end

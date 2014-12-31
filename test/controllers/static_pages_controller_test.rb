@@ -9,6 +9,6 @@ class StaticPagesControllerTest < ActionController::TestCase
   test "should get about" do
     get :about
     assert_response :success
+    assert_select ".about-page h1", "About"
   end
-
 end

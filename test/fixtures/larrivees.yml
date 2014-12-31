@@ -1,11 +1,18 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-# This model initially had no columns defined.  If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-#  column: value
+one:
+  title: For Sale 2013 D-04 w/ LR BAGGS Anthem
+  link: /some/path/larrivee
+  author: Jberczel
+  last_post: Today at ..
+  replies: 5
+  views: 53
+
+two:
+  title: FS Larrivee OM-03
+  link: /some/path/to/larrivee
+  author: GHarrison
+  last_post: Yesterday
+  replies: 2
+  views: 22
+
