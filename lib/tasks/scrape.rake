@@ -31,7 +31,7 @@ end
 def scrape(object)
   puts "scraping #{object} pages..."
   scraper = "#{object}Scraper".constantize.new
-  scraper.parse_pages { |page| puts "parsing page #{page}..." }
+  scraper.parse_pages { |page| puts "\tparsing page #{page}..." }
   scraper.create_posts(object)
   puts "scraping complete"
 end

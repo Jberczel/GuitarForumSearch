@@ -4,8 +4,9 @@ module MartinHelper
     "/all-#{last_updated_at}"
   end
 
-  def format_martin_last_post(post)
-    # split text on space between user and date
-    post.split /\s+(?=\d{1,2}\/\d{1,2}\/\d{2,4})/
-  end
+ # def format_martin_last_post(post)
+ #   # split text on space between user and date
+ #   post.split /\s+(?=\d{1,2}\/\d{1,2}\/\d{2,4})/
+ # end
+
 end

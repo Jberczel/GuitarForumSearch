@@ -28,7 +28,7 @@
         </td>
         <td class="replies"><%= g.replies %></td>
         <td class="views"><%= g.views %></td>
-        <% person, date  = format_blueridge_last_post(g.last_post) %>
+        <% person, date  = format_last_post(g.last_post) %>
         <td class="last-post"><%= date %> <br>by <%= person %></td>
       </tr>
     <% end %>
