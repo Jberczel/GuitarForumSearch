@@ -1,0 +1,17 @@
+%tr
+  / cleanup with helper or decorator (too much logic in the views)
+  %td{:class => "listing"}
+    %a{:href => "http://www.acousticguitarforum.com/forums/#{gear.link}", :target => "_blank"}
+      = gear.title
+    %br
+    %span{:class => "author"}= gear.author
+
+  / also needs to be cleaned up
+  - date, person = getDateAndPerson(gear.last_post)
+  %td{:class => "last-post"}
+    = date
+    %br
+    by
+    = person
+  %td{:class => "replies"}= gear.replies
+  %td{:class => "views"}= gear.views
