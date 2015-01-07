@@ -2,12 +2,12 @@
   .search
     = image_tag "martin.png", :class => "logo"
 
-    %table{:id => "martin", :class => "display", :cellspacing => "0", :width => "100%"}
+    %table.display#martin{:cellspacing => "0", :width => "100%"}
       %thead
         %tr
-          %th{:class => "listing"} Thread
-          %th{:class => "replies"} Replies
-          %th{:class => "last-post"} Last Post
+          %th.listing Thread
+          %th.replies Replies
+          %th.last-post Last Post
       %tbody
         - cache(cache_key_for_martin) do
           = render @martins

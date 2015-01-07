@@ -1,11 +1,11 @@
 %tr
-  %td{:class => "listing"}
+  %td.listing
     %a{:href => "#{larrivee.link}", :target => "_blank"}
       = larrivee.title
     %br
-    %span{:class => "author"}= larrivee.author
+    %span.author= larrivee.author
 
-  %td{:class => "replies"}= larrivee.replies
-  %td{:class => "views"}= larrivee.views
+  %td.replies= larrivee.replies
+  %td.views= larrivee.views
   = simple_format(format_p(larrivee.last_post), {:class => "last-post"}, :wrapper_tag => "td")
 

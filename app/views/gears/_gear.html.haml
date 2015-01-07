@@ -1,10 +1,10 @@
 %tr
-  %td{:class => "listing"}
+  %td.listing
     %a{:href => "http://www.acousticguitarforum.com/forums/#{gear.link}", :target => "_blank"}
       = gear.title
     %br
-    %span{:class => "author"}= gear.author
+    %span.author= gear.author
 
   = simple_format(format_p(gear.last_post), {:class => "last-post"}, :wrapper_tag => "td")
-  %td{:class => "replies"}= gear.replies
-  %td{:class => "views"}= gear.views
+  %td.replies= gear.replies
+  %td.views= gear.views

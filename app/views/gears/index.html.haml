@@ -2,13 +2,13 @@
   .search
     %h3 Gear
 
-    %table{:id => "gear", :class => "display", :cellspacing => "0", :width => "100%"}
+    %table.display#gear{:cellspacing => "0", :width => "100%"}
       %thead
         %tr
-          %th{:class => "listing"} Thread
-          %th{:class => "last-post"} Last Post
-          %th{:class => "replies"} Replies
-          %th{:class => "views"} Views
+          %th.listing Thread
+          %th.last-post Last Post
+          %th.replies Replies
+          %th.views Views
       %tbody
         - cache(cache_key_for_gear) do
           = render @gears

@@ -1,9 +1,9 @@
 %tr
-  %td{:class => "listing"}
+  %td.listing
     %a{:href => "http://www.acousticguitarforum.com/forums/#{post.link}", :target => "_blank"}
       = post.title
     %br
-    %span{:class => "author"}= post.author
+    %span.author= post.author
   = simple_format(format_p(post.last_post), {:class => "last-post"}, :wrapper_tag => "td")
-  %td{:class => "replies"}= post.replies
-  %td{:class => "views"}= post.views
+  %td.replies= post.replies
+  %td.views= post.views
