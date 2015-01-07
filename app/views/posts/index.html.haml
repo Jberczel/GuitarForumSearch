@@ -11,20 +11,6 @@
           %th{:class => "views"} Views
       %tbody
         - cache(cache_key_for_posts) do
-          - @posts.each do |post|
-            %tr
-              %td{:class => "listing"}
-                %a{:href => "http://www.acousticguitarforum.com/forums/#{post.link}", :target => "_blank"}
-                = post.title
-                %br
-                %span{:class => "author"}= post.author
-
-              - date, person = getDateAndPerson(post.last_post)
-              %td{:class => "last-post"}
-                = date
-                %br
-                by
-                = person
-              %td{:class => "replies"}= post.replies
-              %td{:class => "views"}= post.views
+          = render @posts
   .push
+

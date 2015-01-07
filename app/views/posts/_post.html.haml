@@ -1,0 +1,15 @@
+%tr
+  %td{:class => "listing"}
+    %a{:href => "http://www.acousticguitarforum.com/forums/#{post.link}", :target => "_blank"}
+    = post.title
+    %br
+    %span{:class => "author"}= post.author
+
+  - date, person = getDateAndPerson(post.last_post)
+  %td{:class => "last-post"}
+    = date
+    %br
+    by
+    = person
+  %td{:class => "replies"}= post.replies
+  %td{:class => "views"}= post.views
