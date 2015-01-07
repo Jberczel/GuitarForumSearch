@@ -5,7 +5,7 @@ $(".posts.index").ready(function() {
   $(".search").fadeIn(3000);
 })
 
-$(".gear.index").ready(function() {
+$(".gears.index").ready(function() {
   $("#gear").dataTable( {
     "ordering": false
   });

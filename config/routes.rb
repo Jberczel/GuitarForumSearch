@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   root 'static_pages#home'
-  get 'gear'      => 'gear#index'
+  get 'gear'      => 'gears#index'
   get 'guitars'   => 'posts#index'
   get 'larrivee'  => 'larrivees#index'
   get 'martin'    => 'martins#index'
