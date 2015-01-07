@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.4'
 # Use postgresql as the database for Active Record
@@ -33,17 +32,10 @@ group :test do
   gem 'minitest-reporters'
   gem 'mini_backtrace'
 end
-# Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+group :production do
+  gem 'rails_12factor'
+end
 
 # scrape AGF Forum posts
 gem 'nokogiri', '~> 1.6.3.1'
@@ -51,21 +43,21 @@ gem 'nokogiri', '~> 1.6.3.1'
 # resets db ids when loading scraped data
 gem 'activerecord-reset-pk-sequence'
 
+# displays forum posts in datatables
 gem 'jquery-datatables-rails', '~> 2.1.10.0.3'
 
-group :production do
-  gem 'rails_12factor'
-end
-
+# monitoring heroku app
 gem 'newrelic_rpm'
 
+# page loading progress bars
 gem 'pace-rails'
 
+# Semantic, fluid grid framework on top of Sass and Bourbon
 gem 'neat'
 
+# webserver
 gem 'unicorn'
 
-gem 'delayed_job_active_record'
-
+# fix turbolinks and jquery
 gem 'jquery-turbolinks'
 
