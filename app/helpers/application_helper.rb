@@ -1,7 +1,8 @@
 module ApplicationHelper
   # splits user and date for AcoustitGuitarForum pages
-  def getDateAndPerson(post)
-    post.split('by ')
+  def format_p(post)
+    date, person = post.split('by ')
+    "#{date}\nby #{person}"
   end
 
   # Last_post formats

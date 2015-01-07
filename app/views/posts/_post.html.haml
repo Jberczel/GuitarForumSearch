@@ -1,15 +1,9 @@
 %tr
   %td{:class => "listing"}
     %a{:href => "http://www.acousticguitarforum.com/forums/#{post.link}", :target => "_blank"}
-    = post.title
+      = post.title
     %br
     %span{:class => "author"}= post.author
-
-  - date, person = getDateAndPerson(post.last_post)
-  %td{:class => "last-post"}
-    = date
-    %br
-    by
-    = person
+  = simple_format(format_p(post.last_post), {:class => "last-post"}, :wrapper_tag => "td")
   %td{:class => "replies"}= post.replies
   %td{:class => "views"}= post.views
