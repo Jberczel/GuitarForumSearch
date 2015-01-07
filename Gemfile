@@ -61,3 +61,5 @@ gem 'unicorn'
 # fix turbolinks and jquery
 gem 'jquery-turbolinks'
 
+gem 'haml'
+
