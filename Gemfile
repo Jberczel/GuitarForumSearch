@@ -63,3 +63,4 @@ gem 'jquery-turbolinks'
 
 gem 'haml'
 
+gem 'draper', '~> 1.3'

@@ -1,16 +1,5 @@
 %tr
-  %td.listing
-    %a{:href => "http://theunofficialblueridgeguitarforum18213.yuku.com#{blueridge.link}", :target => "_blank"}
-      = blueridge.title
-    %br
-    %span.author= blueridge.author
-
+  %td.listing= blueridge.listing
   %td.replies= blueridge.replies
   %td.views= blueridge.views
-
-  - person, date = format_last_post(blueridge.last_post)
-  %td.last-post
-    = date
-    %br
-    by
-    = person
+  %td.last-post= blueridge.formatted_last_post

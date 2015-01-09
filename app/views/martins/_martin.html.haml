@@ -1,15 +1,4 @@
 %tr
-  %td.listing
-    %a{:href => "http://theunofficialmartinguitarforum.yuku.com#{martin.link}", :target => "_blank"}
-      = martin.title
-    %br
-    %span.author= martin.author
-
+  %td.listing= martin.listing
   %td.replies= martin.replies
-
-  - person, date = format_last_post(martin.last_post)
-  %td.last-post
-    = date
-    %br
-    by
-    = person
+  %td.last-post= martin.formatted_last_post
