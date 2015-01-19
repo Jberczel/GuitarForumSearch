@@ -6,4 +6,9 @@ class LarriveeDecorator < Draper::Decorator
   def base_url
     ""
   end
+
+  # remove sessid parameter from individual links
+  def link
+    super.gsub(/PHPSESSID=.*&/, "")
+  end
 end
