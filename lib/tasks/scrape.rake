@@ -9,7 +9,8 @@ namespace :scrape do
   end
 
   task agf_gear: :environment do
-    scrape Gear
+    hour = ENV['now'] ? Time.now.hour : 3
+    QuarterDayScheduler.new(:hour => hour).schedule { scrape Gear }
   end
 
   task larrivee: :environment do
