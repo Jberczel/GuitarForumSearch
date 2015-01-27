@@ -11,6 +11,11 @@
           %th.views Views
       %tbody
         - cache(cache_key_for_posts) do
-          = render @posts
+          - @posts_presenter.each do |post|
+            %tr
+              %td.listing= post.listing
+              %td.last-post=  post.formatted_last_post
+              %td.replies= post.replies
+              %td.views= post.views
   .push
 
