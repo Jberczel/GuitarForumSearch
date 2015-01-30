@@ -12,7 +12,7 @@ class ForumScraper
   end
 
   def default_url
-    "http://www.google.com"
+    raise NotImplementedError
   end
 
   def default_sticky_posts

@@ -1,9 +1,11 @@
 require 'test_helper'
 
 class GuitarScraperTest < ActiveSupport::TestCase
+  include ForumScraperInterfaceTest
+  include AgfScraperSubclassTest
 
   def setup
-    @scrape = GuitarScraper.new
+    @scrape = @object = GuitarScraper.new
   end
 
   test 'initialization' do
@@ -14,8 +16,5 @@ class GuitarScraperTest < ActiveSupport::TestCase
     assert_equal 6,  @scrape.sticky_posts
   end
 
-  test 'scraping' do
-   skip
-  end
 end
 

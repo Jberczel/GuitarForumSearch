@@ -8,6 +8,7 @@ class AgfScraper < ForumScraper
   def default_forum
     raise NotImplementedError, 'assign forum number in sublcass'
   end
+
   def page_count
     @page_count ||=
       content.css('td.vbmenu_control').text.split(' ').last.to_i
@@ -25,6 +26,7 @@ class AgfScraper < ForumScraper
     "#{url}&page=#{page_num}"
   end
 
+  # stub in tests
   def page_data(url)
     Nokogiri::HTML(open(url))
   end
