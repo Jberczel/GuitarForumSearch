@@ -41,11 +41,6 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.8.0)
-    draper (1.4.0)
-      actionpack (>= 3.0)
-      activemodel (>= 3.0)
-      activesupport (>= 3.0)
-      request_store (~> 1.0)
     erubis (2.7.0)
     execjs (2.2.2)
     haml (4.0.6)
@@ -120,7 +115,6 @@ GEM
     rake (10.4.2)
     rdoc (4.2.0)
       json (~> 1.4)
-    request_store (1.1.0)
     ruby-progressbar (1.7.1)
     sass (3.2.19)
     sass-rails (4.0.4)
@@ -165,7 +159,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord-reset-pk-sequence
   coffee-rails (~> 4.0.0)
-  draper (~> 1.3)
   haml
   jbuilder (~> 2.0)
   jquery-datatables-rails (~> 2.1.10.0.3)
