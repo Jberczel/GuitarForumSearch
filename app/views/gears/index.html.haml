@@ -11,5 +11,10 @@
           %th.views Views
       %tbody
         - cache(cache_key_for_gear) do
-          = render @gears
+          - @gears_presenter.each do |gear|
+            %tr
+              %td.listing= gear.listing
+              %td.last-post=  gear.formatted_last_post
+              %td.replies= gear.replies
+              %td.views= gear.views
   .push

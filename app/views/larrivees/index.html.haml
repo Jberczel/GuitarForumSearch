@@ -11,6 +11,12 @@
           %th.last-post Last Post
       %tbody
         - cache(cache_key_for_larrivee) do
-          = render @larrivees
+          - @larrivees_presenter.each do |larrivee|
+            %tr
+              %td.listing= larrivee.listing
+              %td.replies= larrivee.replies
+              %td.views= larrivee.views
+              %td.last-post= larrivee.formatted_last_post
+
   .push
 

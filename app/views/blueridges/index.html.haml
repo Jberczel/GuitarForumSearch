@@ -11,5 +11,10 @@
           %th.last-post Last Post
       %tbody
         - cache(cache_key_for_blueridge) do
-          = render @blueridges
+          - @blueridges_presenter.each do |blueridge|
+            %tr
+              %td.listing= blueridge.listing
+              %td.replies= blueridge.replies
+              %td.views= blueridge.views
+              %td.last-post= blueridge.formatted_last_post
   .push

@@ -10,5 +10,9 @@
           %th.last-post Last Post
       %tbody
         - cache(cache_key_for_martin) do
-          = render @martins
+          - @martins_presenter.each do |martin|
+            %tr
+              %td.listing= martin.listing
+              %td.replies= martin.replies
+              %td.last-post= martin.formatted_last_post
   .push

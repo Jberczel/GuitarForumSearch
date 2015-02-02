@@ -1,5 +1,6 @@
 class GearsController < ApplicationController
   def index
-    @gears = Gear.all.decorate
+    gear = Gear.all
+    @gears_presenter = GearPresenter.wrap(gear, view_context)
   end
 end
