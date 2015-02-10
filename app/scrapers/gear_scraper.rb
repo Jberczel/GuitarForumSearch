@@ -9,6 +9,6 @@ class GearScraper < AgfScraper
   end
 
   def default_sticky_posts
-    5
+    6
   end
 end
