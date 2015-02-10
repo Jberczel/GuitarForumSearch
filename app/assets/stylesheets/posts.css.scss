@@ -86,4 +86,32 @@
   }
 }
 
+.auction-links {
+  float: right;
+  @include media($tablet) {
+    padding-right: 1em;
+  }
+  @include media($mobile) {
+    float: none;
+    text-align: center;
+  }
+  visibility: hidden;
+}
+
+.ebay-link, .reverb-link {
+  @include inline-block;
+  border-radius: 3px;
+  color: $dkerblue;
+  font-size: 0.6em;
+  font-weight: bold;
+  min-width: 90px;
+  margin-bottom: 1em;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba(white, 0.8);
+    cursor: pointer;
+  }
+}
 

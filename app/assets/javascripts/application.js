@@ -17,6 +17,8 @@
 //= require dataTables/jquery.dataTables
 //= require_tree .
 //= require turbolinks
+//= require jquery.readyselector
+//= require jquery.helpers
 
 
 

@@ -3,6 +3,7 @@ $(".posts.index").ready(function() {
     "ordering": false
   });
   $(".search").fadeIn(3000);
+  $('#guitars').on('search.dt', updateLinks);
 })
 
 $(".gears.index").ready(function() {
@@ -10,6 +11,7 @@ $(".gears.index").ready(function() {
     "ordering": false
   });
   $(".search").fadeIn(3000);
+  $('#gear').on('search.dt', updateLinks);
 })
 
 $(".larrivees.index").ready(function() {
@@ -17,6 +19,7 @@ $(".larrivees.index").ready(function() {
     "ordering": false
   });
   $(".search").fadeIn(3000);
+  $('#larrivee').on('search.dt', updateLinks);
 })
 
 $(".martins.index").ready(function() {
@@ -24,6 +27,7 @@ $(".martins.index").ready(function() {
     "ordering": false
   });
   $(".search").fadeIn(3000);
+  $('#martin').on('search.dt', updateLinks);
 })
 
 
@@ -32,4 +36,15 @@ $(".blueridges.index").ready(function() {
     "ordering": false
   });
   $(".search").fadeIn(3000);
+  $('#blueridge').on('search.dt', updateLinks);
 })
+
+
+function updateLinks() {
+  var value = $('.dataTables_filter input').val()
+  //value = encodeURIComponent(value);
+  $('.reverb-link').attr("href", "https://reverb.com/marketplace?query=" + value)
+  $('.ebay-link').attr("href", "http://www.ebay.com/sch/?&_nkw=" + value)
+  $('.auction-links').visible();
+  //console.log(value); // <-- the value
+}

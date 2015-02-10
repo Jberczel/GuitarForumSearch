@@ -1,7 +1,7 @@
 .wrapper
   .search
     = image_tag "larrivee.png", :class => "logo"
-
+    = render 'shared/auction_links'
     %table.display#larrivee{:cellspacing => "0", :width => "100%"}
       %thead
         %tr
