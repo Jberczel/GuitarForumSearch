@@ -9,6 +9,6 @@ class GuitarScraper < AgfScraper
   end
 
   def default_sticky_posts
-    6
+    7
   end
 end
