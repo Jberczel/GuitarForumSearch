@@ -46,7 +46,7 @@ class AgfScraper < ForumScraper
     last_post = fields[3].text.gsub(/\s{2,}/, ' ')
     replies   = fields[4].text
     views     = fields[5].text
-    link      = row.at_css('td a')['href']
+    link      = row.at_css('div > a')['href']
     posts << OpenStruct.new(title: title, link: link, author: author,
                  last_post: last_post, replies: replies, views: views)
   end
