@@ -2,7 +2,8 @@ class BlueridgePresenter < BasePresenter
   include ClassifiedsPresenter
 
   def base_url
-    "http://theunofficialblueridgeguitarforum18213.yuku.com"
+    # links include base_url, so we omit base_url when presenting blueridge links
+    ""
   end
 
 end

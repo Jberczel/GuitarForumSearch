@@ -1,6 +1,6 @@
 class BlueridgeScraper < ForumScraper
   def default_url
-    "http://theunofficialblueridgeguitarforum18213.yuku.com/forums/71"
+    "https://www.tapatalk.com/groups/theunofficialblueridgeguitarforum18213/for-sale-or-trade-f71/"
   end
 
   def default_sticky_posts
@@ -21,7 +21,8 @@ class BlueridgeScraper < ForumScraper
   end
 
   def page_url(page_num)
-    "#{url}?page=#{page_num}"
+    pagination = "index-s#{(page_num - 1) * 25}.html"
+    page_num > 1 ? "#{url}/#{pagination}" : url
   end
 
   def page_data(url)
@@ -29,7 +30,7 @@ class BlueridgeScraper < ForumScraper
   end
 
   def table_rows(data)
-    data.css(".boxbody tbody > tr")
+    data.css(".topics > li")
   end
 
   def remove_sticky_posts(rows, page_num)
@@ -37,14 +38,20 @@ class BlueridgeScraper < ForumScraper
   end
 
   def parse_single_post(row)
-    fields    = row.css('td')
-    title     = fields[2].text.gsub(/\s{2,}/, ' ')
-    replies   = fields[3].text
-    views     = fields[4].text
-    last_post = fields[5].text.gsub(/\s{2,}/, ' ')
-    author    = fields[6].text.strip
-    link      = row.css('td a')[2]['href']
-    posts << OpenStruct.new(title: title, link: link, author: author,
-                 last_post: last_post, replies: replies, views: views)
+    title     =  row.at_css('.topictitle')
+    replies   =  row.at_css('.posts')
+    views     =  row.at_css('.views')
+    last_post =  row.at_css('.lastpost')
+    author    =  row.at_css('.username')
+    link      =  row.at_css('a.topictitle')
+
+    posts << OpenStruct.new(
+      title:     title ? title.text : "",
+      link:      link ? link['href'] : "",
+      author:    author ? author.text : "",
+      last_post: last_post ? last_post.text : "",
+      replies:   replies ? replies.text.gsub('Replies', '') : "",
+      views:     views ? views.text.gsub('Views', '') : ""
+    )
   end
 end

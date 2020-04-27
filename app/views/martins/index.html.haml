@@ -7,6 +7,7 @@
         %tr
           %th.listing Thread
           %th.replies Replies
+          %th.views Views
           %th.last-post Last Post
       %tbody
         - cache(cache_key_for_martin) do
@@ -14,5 +15,6 @@
             %tr
               %td.listing= martin.listing
               %td.replies= martin.replies
+              %td.views= martin.views
               %td.last-post= martin.formatted_last_post
   .push
