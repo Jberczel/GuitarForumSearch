@@ -4,7 +4,7 @@ class MartinScraper < ForumScraper
   end
 
   def default_sticky_posts
-    4
+    5
   end
 
   # select how many pages back in history to scrape
