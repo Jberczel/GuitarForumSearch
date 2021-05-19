@@ -39,7 +39,7 @@ group :production do
 end
 
 # scrape AGF Forum posts
-gem 'nokogiri', '~> 1.6.3.1'
+gem 'nokogiri', '~> 1.11.4'
 
 # resets db ids when loading scraped data
 gem 'activerecord-reset-pk-sequence'
